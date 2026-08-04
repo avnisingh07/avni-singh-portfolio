@@ -85,7 +85,7 @@ export function Hero() {
               >
                 <span className="absolute inset-0 origin-bottom scale-y-0 bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
                 <span className="relative flex items-center gap-2 transition-colors group-hover:text-accent-foreground">
-                  Download résumé
+                  Download Resume
                   <ArrowUpRight
                     size={14}
                     className="transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"

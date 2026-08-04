@@ -95,7 +95,7 @@ export function StaggerWords({
         <span
           key={`${ch}-${i}`}
           aria-hidden
-          className="inline-block overflow-hidden align-bottom pb-[0.06em]"
+          className="inline-block overflow-hidden align-bottom pb-[0.22em] -mb-[0.22em]"
         >
           <motion.span
             className="inline-block"
