@@ -1,5 +1,13 @@
 import { MaskWords, Parallax, Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
+import { CountUp } from "./CountUp";
+
+const STATS = [
+  { value: 1, suffix: "+", label: "Years in industry" },
+  { value: 8, suffix: "", label: "Shipped AI & backend systems" },
+  { value: 7800, suffix: "+", label: "Applicants beaten at the Kalyani hackathon" },
+  { value: 1, suffix: "", label: "Peer-reviewed publication" },
+];
 
 export function About() {
   return (
