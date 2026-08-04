@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, useInView, useScroll, useSpring } from "motion/react";
 import { ArrowLeft } from "lucide-react";
