@@ -131,9 +131,8 @@
 @utility display {
   font-family: var(--font-display);
   font-optical-sizing: auto;
-  font-variation-settings: "SOFT" 0, "WONK" 1;
-  letter-spacing: -0.03em;
-  line-height: 0.92;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
 }
 
 @utility eyebrow {
