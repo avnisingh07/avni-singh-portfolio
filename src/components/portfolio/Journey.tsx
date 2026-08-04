@@ -162,8 +162,30 @@ export function Journey() {
           <p className="eyebrow md:col-span-3">Key Learnings &amp; Impact</p>
           <div className="md:col-span-9">
             <blockquote className="display text-[clamp(1.5rem,3.6vw,3rem)] font-medium leading-[1.15]">
-              <MaskWords text="Research tells you what is possible; deployment tells you what is真 real." />
+              <MaskWords text="Research tells you what is possible." />{" "}
+              <span className="italic text-accent">
+                <MaskWords text="Deployment tells you what actually holds up." delay={0.12} />
+              </span>
             </blockquote>
+            <Reveal delay={0.15}>
+              <p className="mt-10 max-w-2xl text-sm leading-loose text-muted-foreground">
+                The gap between a benchmark-winning model and a system a warehouse can rely on is
+                mostly architecture. Modular, interpretable components beat monolithic models when
+                real-time constraints, safety validation and debuggability matter more than raw
+                capability. Owning the full stack — perception, planning, backend, transport layer
+                and dashboard — taught me that robotics is a distributed systems problem wearing a
+                robot costume: latency budgets, state synchronization and failure modes decide
+                whether anything moves at all.
+              </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <Link
+                to="/"
+                className="link-underline mt-12 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-accent"
+              >
+                <ArrowLeft size={14} /> Back to portfolio
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
