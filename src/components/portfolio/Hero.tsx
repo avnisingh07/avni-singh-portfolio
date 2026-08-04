@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
-import portrait from "@/assets/portrait.jpg";
+import avniPhoto from "@/assets/avni.jpeg.asset.json";
 import { LINKS } from "./content";
 import { Magnetic, StaggerWords } from "./motion-primitives";
 
@@ -92,7 +92,7 @@ export function Hero() {
         >
           <div className="relative overflow-hidden">
             <motion.img
-              src={portrait}
+              src={avniPhoto.url}
               alt="Portrait of Avni Singh"
               width={612}
               height={1140}
