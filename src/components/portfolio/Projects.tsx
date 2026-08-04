@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "./content";
-import { Magnetic, MaskWords, Reveal } from "./motion-primitives";
+import { Magnetic, Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
 
 export function Projects() {
@@ -29,7 +29,7 @@ export function Projects() {
                   </div>
                   <div className="md:col-span-7">
                     <h3 className="display flex items-start gap-3 text-[clamp(2rem,5.5vw,4.25rem)] font-medium transition-colors group-hover:text-accent">
-                      <MaskWords text={p.title} stagger={0.05} />
+                      <span>{p.title}</span>
                       <ArrowUpRight
                         className="mt-2 shrink-0 -translate-x-3 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0 group-hover:opacity-100"
                         size={28}
