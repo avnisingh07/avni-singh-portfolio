@@ -96,10 +96,11 @@ export function Journey() {
 
       <header className="mx-auto max-w-[1400px] px-5 pb-16 pt-14 sm:px-8 md:pb-24 md:pt-20">
         <p className="eyebrow">Case Study — Internship</p>
-        <h1 className="display mt-6 text-[clamp(2.6rem,9vw,7.5rem)] font-medium leading-[0.95]">
-          <StaggerWords text="The Bharat" />
-          <br />
-          <span className="italic text-accent">
+        <h1 className="display mt-6 text-[clamp(2.4rem,8.5vw,7rem)] font-medium leading-[1.05]">
+          <span className="block">
+            <StaggerWords text="The Bharat" />
+          </span>
+          <span className="block italic text-accent">
             <StaggerWords text="Forge Journey" delay={0.35} />
           </span>
         </h1>
