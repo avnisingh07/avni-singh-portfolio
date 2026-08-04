@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Journey } from "@/components/portfolio/Journey";
 import { CustomCursor } from "@/components/portfolio/CustomCursor";
 import { SmoothScroll } from "@/components/portfolio/SmoothScroll";
+import { BackToTop } from "@/components/portfolio/BackToTop";
 
 const title = "The Bharat Forge Journey — Avni Singh";
 const description =
@@ -27,6 +28,7 @@ function JourneyPage() {
       <SmoothScroll />
       <CustomCursor />
       <Journey />
+      <BackToTop />
     </>
   );
 }

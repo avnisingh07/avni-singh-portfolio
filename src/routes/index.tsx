@@ -9,6 +9,8 @@ import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
 import { CustomCursor } from "@/components/portfolio/CustomCursor";
 import { SmoothScroll } from "@/components/portfolio/SmoothScroll";
+import { BackToTop } from "@/components/portfolio/BackToTop";
+import { Toaster } from "@/components/ui/sonner";
 
 const title = "Avni Singh — Applied AI Engineer";
 const description =
@@ -43,6 +45,8 @@ function Index() {
         <Education />
       </main>
       <Contact />
+      <BackToTop />
+      <Toaster position="bottom-center" />
     </div>
   );
 }

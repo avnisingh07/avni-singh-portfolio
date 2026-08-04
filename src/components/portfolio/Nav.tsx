@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
 import { Moon, Sun } from "lucide-react";
 import { SECTIONS } from "./content";
+import { useTheme } from "./useTheme";
 
 export function Nav() {
   const [active, setActive] = useState<string>("");
   const [solid, setSolid] = useState(false);
-  const [dark, setDark] = useState(false);
+  const { dark, toggle } = useTheme();
   const [open, setOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
@@ -32,10 +33,6 @@ export function Nav() {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -81,7 +78,7 @@ export function Nav() {
               type="button"
               aria-label="Toggle dark mode"
               data-cursor={dark ? "Light" : "Dark"}
-              onClick={() => setDark((d) => !d)}
+              onClick={toggle}
               className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent"
             >
               {dark ? <Sun size={15} /> : <Moon size={15} />}

@@ -1,5 +1,13 @@
 import { MaskWords, Parallax, Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
+import { CountUp } from "./CountUp";
+
+const STATS = [
+  { value: 1, suffix: "+", label: "Years in industry" },
+  { value: 8, suffix: "", label: "Shipped AI & backend systems" },
+  { value: 7800, suffix: "+", label: "Applicants beaten at the Kalyani hackathon" },
+  { value: 1, suffix: "", label: "Peer-reviewed publication" },
+];
 
 export function About() {
   return (
@@ -37,6 +45,21 @@ export function About() {
             </Reveal>
           </Parallax>
         </div>
+      </div>
+
+      <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden border-t border-rule bg-rule md:grid-cols-4">
+        {STATS.map((s, i) => (
+          <Reveal key={s.label} delay={0.05 * i} y={20}>
+            <div className="group h-full bg-background px-4 py-8 transition-colors duration-500 hover:bg-[color-mix(in_oklab,var(--accent)_7%,transparent)] md:px-6 md:py-10">
+              <p className="display text-[clamp(2.2rem,5vw,3.6rem)] font-semibold transition-colors duration-500 group-hover:text-accent">
+                <CountUp to={s.value} suffix={s.suffix} />
+              </p>
+              <p className="mt-3 text-[11px] uppercase leading-relaxed tracking-[0.16em] text-muted-foreground">
+                {s.label}
+              </p>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
