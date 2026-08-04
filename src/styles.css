@@ -86,12 +86,33 @@
 
   html {
     -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  img {
+    -webkit-user-drag: none;
   }
 
   section,
   footer {
     scroll-margin-top: 84px;
+  }
+
+  @media (min-width: 768px) {
+    section,
+    footer {
+      scroll-margin-top: 96px;
+    }
   }
 
   body {
