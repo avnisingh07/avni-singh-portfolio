@@ -1,9 +1,13 @@
-import { Github, Linkedin } from "lucide-react";
+import { Check, Copy, Github, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import { LINKS } from "./content";
 import { Magnetic, Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
   return (
     <footer id="contact" className="mx-auto max-w-[1400px] px-5 pb-12 pt-20 sm:px-8 md:pt-32">
       <SectionHeading num="06" label="Contact" aside="Open to 2026 roles" />
@@ -23,6 +27,22 @@ export function Contact() {
           >
             {LINKS.email}
           </a>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                navigator.clipboard.writeText(LINKS.email);
+                setCopied(true);
+                toast.success("Email copied to clipboard");
+                window.setTimeout(() => setCopied(false), 2000);
+              }}
+              data-cursor={copied ? "Copied" : "Copy"}
+              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:border-accent hover:text-accent"
+            >
+              {copied ? <Check size={13} /> : <Copy size={13} />}
+              {copied ? "Copied" : "Copy email"}
+            </button>
+          </div>
           <p className="mt-6 text-sm text-muted-foreground">
             <a href={`tel:${LINKS.phone}`} className="link-underline">
               {LINKS.phone}
