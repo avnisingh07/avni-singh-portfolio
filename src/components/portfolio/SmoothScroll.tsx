@@ -11,6 +11,7 @@ export function SmoothScroll() {
         duration: 1.15,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
+        anchors: { offset: -72 },
       });
       const loop = (time: number) => {
         lenis.raf(time);

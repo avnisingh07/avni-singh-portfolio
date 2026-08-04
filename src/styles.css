@@ -86,6 +86,12 @@
 
   html {
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  section,
+  footer {
+    scroll-margin-top: 84px;
   }
 
   body {
