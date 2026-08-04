@@ -165,7 +165,7 @@ export function Parallax({
   const raw = useTransform(scrollYProgress, [0, 1], [amount, -amount]);
   const y = useSpring(raw, { stiffness: 120, damping: 24, mass: 0.4 });
   return (
-    <motion.div ref={ref} className={className} style={reduce ? undefined : { y }}>
+    <motion.div ref={ref} className={className} style={reduce ? {} : { y }}>
       {children}
     </motion.div>
   );
