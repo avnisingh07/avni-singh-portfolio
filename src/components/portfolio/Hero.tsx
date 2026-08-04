@@ -92,7 +92,7 @@ export function Hero() {
         >
           <div className="relative overflow-hidden">
             <motion.img
-              src={portrait}
+              src={avniPhoto.url}
               alt="Portrait of Avni Singh"
               width={612}
               height={1140}
