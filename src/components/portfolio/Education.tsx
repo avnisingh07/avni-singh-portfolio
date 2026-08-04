@@ -38,14 +38,20 @@ export function Education() {
             <p className="eyebrow">Certifications</p>
             <ul className="mt-6 space-y-4">
               {CERTIFICATIONS.map((c) => (
-                <li
-                  key={c}
-                  className="border-b border-rule pb-4 text-sm leading-relaxed text-muted-foreground"
-                >
-                  {c}
+                <li key={c.label} className="border-b border-rule pb-4">
+                  <a
+                    href={c.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center gap-2 text-sm leading-relaxed text-muted-foreground transition-colors hover:text-accent"
+                  >
+                    <span>{c.label}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
                 </li>
               ))}
             </ul>
+
           </Reveal>
         </div>
       </div>
