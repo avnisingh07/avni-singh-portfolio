@@ -14,9 +14,9 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="grain relative mx-auto max-w-[1400px] px-5 pb-16 pt-32 sm:px-8 md:pb-24 md:pt-44"
+      className="grain relative mx-auto max-w-[1400px] px-5 pb-12 pt-28 sm:px-8 md:pb-24 md:pt-44"
     >
-      <div className="grid gap-10 md:grid-cols-12 md:gap-6">
+      <div className="grid items-start gap-10 md:grid-cols-12 md:gap-6">
         <div className="md:col-span-7">
           <motion.p
             initial={{ opacity: 0 }}
@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base"
+            className="mt-6 max-w-md md:mt-8 text-sm leading-relaxed text-muted-foreground md:text-base"
           >
             <span className="text-foreground">Applied AI Engineer</span> — building AI-powered
             software &amp; production-grade backend systems.
@@ -49,7 +49,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.95, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex flex-wrap items-center gap-3"
+            className="mt-8 flex flex-wrap items-center gap-3 md:mt-10"
           >
             <Magnetic>
               <a
@@ -96,8 +96,10 @@ export function Hero() {
               alt="Portrait of Avni Singh"
               width={612}
               height={1140}
+              decoding="async"
+              fetchPriority="high"
               style={{ y: imgY }}
-              className="h-[380px] w-full scale-110 object-cover object-top md:h-[560px]"
+              className="h-[340px] w-full scale-110 object-cover object-top sm:h-[440px] md:h-[560px]"
             />
           </div>
           <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -110,7 +112,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1 }}
-        className="mt-16 flex items-center gap-3 border-t border-rule pt-5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
+        className="mt-12 flex items-center gap-3 md:mt-16 border-t border-rule pt-5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
       >
         <motion.span
           animate={{ y: [0, 6, 0] }}

@@ -86,12 +86,33 @@
 
   html {
     -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  img {
+    -webkit-user-drag: none;
   }
 
   section,
   footer {
     scroll-margin-top: 84px;
+  }
+
+  @media (min-width: 768px) {
+    section,
+    footer {
+      scroll-margin-top: 96px;
+    }
   }
 
   body {
@@ -161,6 +182,46 @@
   }
 }
 
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+@utility marquee-track {
+  animation-name: marquee-x;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
 @media (min-width: 1024px) {
   .cursor-none-desktop,
   .cursor-none-desktop * {
@@ -169,6 +230,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
