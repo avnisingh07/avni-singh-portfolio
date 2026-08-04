@@ -14,7 +14,15 @@ export const LINKS = {
   phone: "+91-8126487575",
 };
 
-export const EXPERIENCE = [
+type ExpItem = { title: string; href?: string; body: string };
+
+export const EXPERIENCE: {
+  year: string;
+  role: string;
+  org: string;
+  period: string;
+  items: ExpItem[];
+}[] = [
   {
     year: "2025 — 2026",
     role: "AI/ML Intern",

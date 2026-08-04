@@ -18,7 +18,7 @@ function Marquee({
     <div className="overflow-hidden">
       <motion.div
         className="flex w-max gap-6 whitespace-nowrap"
-        animate={reduce ? undefined : { x: reverse ? ["-33.33%", "0%"] : ["0%", "-33.33%"] }}
+        animate={{ x: reduce ? "0%" : reverse ? ["-33.33%", "0%"] : ["0%", "-33.33%"] }}
         transition={{ repeat: Infinity, ease: "linear", duration }}
       >
         {row.map((item, i) => (
