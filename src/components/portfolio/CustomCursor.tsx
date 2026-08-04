@@ -18,7 +18,7 @@ export function CustomCursor() {
       x.set(e.clientX);
       y.set(e.clientY);
       const target = (e.target as HTMLElement)?.closest?.("[data-cursor]") as HTMLElement | null;
-      setLabel(target ? (target.dataset.cursor ?? "") : null);
+      setLabel(target ? (target.dataset['cursor'] ?? "") : null);
     };
     window.addEventListener("mousemove", move);
     return () => {
