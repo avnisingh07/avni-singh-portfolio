@@ -17,7 +17,7 @@ export function Projects() {
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="GitHub"
-                className="group block border-t border-rule py-10 transition-colors hover:border-accent md:py-14"
+                className="group block border-t border-rule py-8 transition-colors duration-500 hover:border-accent md:py-14"
               >
                 <div className="grid gap-6 md:grid-cols-12 md:gap-8">
                   <div className="md:col-span-1">
@@ -27,7 +27,7 @@ export function Projects() {
                     <h3 className="display text-[clamp(2rem,5.5vw,4.25rem)] font-medium transition-colors group-hover:text-accent">
                       {p.title}
                     </h3>
-                    <p className="mt-4 max-w-xl text-sm leading-loose text-muted-foreground">
+                    <p className="mt-3 max-w-xl text-sm leading-loose text-muted-foreground md:mt-4">
                       {p.body}
                     </p>
                   </div>
