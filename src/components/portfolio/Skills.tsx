@@ -13,13 +13,20 @@ function Marquee({
   duration: number;
 }) {
   const reduce = useReducedMotion();
+  const [paused, setPaused] = useState(false);
   const row = [...items, ...items, ...items];
   return (
-    <div className="overflow-hidden">
+    <div
+      className="overflow-hidden"
+      onPointerEnter={() => setPaused(true)}
+      onPointerLeave={() => setPaused(false)}
+    >
       <motion.div
-        className="flex w-max gap-6 whitespace-nowrap"
+        className="flex w-max gap-6 whitespace-nowrap will-change-transform"
         animate={{ x: reduce ? "0%" : reverse ? ["-33.33%", "0%"] : ["0%", "-33.33%"] }}
         transition={{ repeat: Infinity, ease: "linear", duration }}
+        style={{ animationPlayState: paused ? "paused" : "running" }}
+        {...(paused && !reduce ? { animate: { x: undefined } } : {})}
       >
         {row.map((item, i) => (
           <span
