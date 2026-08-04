@@ -26,7 +26,9 @@ function Phase({
 }) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { margin: "-45% 0px -45% 0px" });
-  if (inView) onActive(i);
+  useEffect(() => {
+    if (inView) onActive(i);
+  }, [inView, i, onActive]);
 
   return (
     <article ref={ref} className="border-t border-rule pt-8">
