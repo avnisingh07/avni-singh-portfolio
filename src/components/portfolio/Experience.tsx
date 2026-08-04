@@ -1,4 +1,5 @@
-import { ArrowUpRight, Trophy } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Trophy } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { EXPERIENCE } from "./content";
 import { Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
