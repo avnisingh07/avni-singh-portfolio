@@ -1,4 +1,5 @@
-import { ArrowUpRight, Trophy } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Trophy } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { EXPERIENCE } from "./content";
 import { Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
@@ -43,7 +44,17 @@ export function Experience() {
                     </div>
                   ))}
                 </div>
+                {role.org.startsWith("Bharat Forge") ? (
+                  <Link
+                    to="/journey"
+                    data-cursor="Read"
+                    className="link-underline mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-accent"
+                  >
+                    Read the full internship journey <ArrowRight size={14} />
+                  </Link>
+                ) : null}
               </div>
+
             </article>
           </Reveal>
         ))}
