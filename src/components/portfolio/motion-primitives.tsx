@@ -61,7 +61,7 @@ export function MaskWords({
   return (
     <span ref={ref} className={className}>
       {words.map((word, i) => (
-        <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom">
+        <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom pb-[0.2em] -mb-[0.2em]">
           <motion.span
             className="inline-block"
             initial={reduce ? false : { y: "115%", opacity: 0 }}
