@@ -1,6 +1,8 @@
+import { ArrowUpRight } from "lucide-react";
 import { CERTIFICATIONS } from "./content";
 import { Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
+
 
 export function Education() {
   return (
