@@ -133,8 +133,21 @@ export const SKILL_GROUPS = [
 ];
 
 export const CERTIFICATIONS = [
-  "ChatGPT for Educators, Researchers & Professionals — World Technocon",
-  "GitHub Copilot Global Bootcamp — Microsoft Learn Student Ambassadors",
-  "What Is Generative AI? — LinkedIn",
-  "Introduction to Generative AI — Simplilearn",
+  {
+    label: "ChatGPT for Educators, Researchers & Professionals — World Technocon",
+    href: "https://a.wtco.in/certificate/download-certificate/YFSV93EBE6GM9LW",
+  },
+  {
+    label: "GitHub Copilot Global Bootcamp — Microsoft Learn Student Ambassadors",
+    href: "https://drive.google.com/file/d/1-AKUmn7WimY13P8ys7Q9oWQE4wMEQfB7/view?usp=drivesdk",
+  },
+  {
+    label: "What Is Generative AI? — LinkedIn",
+    href: "https://www.linkedin.com/learning/certificates/15a42fc9ae42bc9f91ff6cfc77c571dfaf5a7270f6a72e217772f59c6c5a7aef",
+  },
+  {
+    label: "Introduction to Generative AI — Simplilearn",
+    href: "https://certificates.simplicdn.net/share/10524208_10856424_1785233870590.pdf",
+  },
 ];
+
