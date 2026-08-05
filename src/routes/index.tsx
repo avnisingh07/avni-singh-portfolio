@@ -7,7 +7,6 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
-import { CustomCursor } from "@/components/portfolio/CustomCursor";
 import { SmoothScroll } from "@/components/portfolio/SmoothScroll";
 import { BackToTop } from "@/components/portfolio/BackToTop";
 import { Toaster } from "@/components/ui/sonner";
@@ -34,7 +33,6 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SmoothScroll />
-      <CustomCursor />
       <Nav />
       <main>
         <Hero />

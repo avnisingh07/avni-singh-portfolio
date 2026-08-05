@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "./content";
-import { Magnetic, Reveal } from "./motion-primitives";
+import { Reveal } from "./motion-primitives";
 import { SectionHeading } from "./SectionHeading";
 
 export function Projects() {
@@ -11,12 +11,10 @@ export function Projects() {
       <div className="mt-14">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.title} y={48}>
-            <Magnetic strength={0.05}>
               <a
                 href={p.href}
                 target="_blank"
                 rel="noreferrer"
-                data-cursor="GitHub"
                 className="group relative block overflow-hidden border-t border-rule transition-colors duration-500 last:border-b hover:border-accent"
               >
                 {/* accent sweep */}
@@ -65,7 +63,6 @@ export function Projects() {
                   </div>
                 </div>
               </a>
-            </Magnetic>
           </Reveal>
         ))}
       </div>

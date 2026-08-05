@@ -221,12 +221,6 @@
   background: linear-gradient(to left, var(--background), transparent);
 }
 
-@media (min-width: 1024px) {
-  .cursor-none-desktop,
-  .cursor-none-desktop * {
-    cursor: none !important;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
