@@ -8,7 +8,7 @@ export const SECTIONS = [
 ] as const;
 
 export const LINKS = {
-  linkedin: "https://linkedin.com/in/avnisingh07",
+  linkedin: "https://www.linkedin.com/in/avnisingh07/",
   github: "https://github.com/avnisingh07",
   email: "avnisinghrana1@gmail.com",
   phone: "+91-8126487575",
@@ -150,4 +150,3 @@ export const CERTIFICATIONS = [
     href: "https://certificates.simplicdn.net/share/10524208_10856424_1785233870590.pdf",
   },
 ];
-

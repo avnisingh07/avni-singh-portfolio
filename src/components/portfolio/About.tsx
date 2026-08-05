@@ -39,8 +39,8 @@ export function About() {
             <Reveal delay={0.15}>
               <p className="text-sm leading-loose text-muted-foreground">
                 Strong in Python, FastAPI and distributed systems, with a bias toward evaluation,
-                guardrails and things that hold up under real traffic. Currently completing a B.Tech
-                in AI/ML at Symbiosis Institute of Technology, graduating May 2026.
+                guardrails and things that hold up under real traffic. Recently completed B.Tech
+                in AI/ML at Symbiosis Institute of Technology, Pune (May 2026).
               </p>
             </Reveal>
           </Parallax>

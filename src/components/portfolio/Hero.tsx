@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
-import avniPhoto from "@/assets/avni.jpeg.asset.json";
 import { LINKS } from "./content";
 import { Magnetic, StaggerWords } from "./motion-primitives";
 
@@ -34,15 +33,6 @@ export function Hero() {
 
       <div className="relative grid items-start gap-10 md:grid-cols-12 md:gap-6">
         <motion.div className="md:col-span-7">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="eyebrow"
-          >
-            Portfolio — Issue 01
-          </motion.p>
-
           <h1 className="display mt-6 text-[clamp(3.4rem,13vw,10.5rem)] font-semibold">
             <StaggerWords text="Avni" delay={0.25} />
             <br />
@@ -69,7 +59,7 @@ export function Hero() {
           >
             <Magnetic>
               <a
-                href="/Avni-Singh-Resume.pdf"
+                href="/Avni_Singh.pdf"
                 download
                 data-cursor="Resume"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-foreground px-6 py-3 text-xs uppercase tracking-[0.16em] text-background"
@@ -128,7 +118,7 @@ export function Hero() {
               className="absolute inset-0 z-10 origin-top bg-background"
             />
             <img
-              src={avniPhoto.url}
+              src="/avni.jpeg"
               alt="Portrait of Avni Singh, Applied AI Engineer"
               decoding="async"
               fetchPriority="high"
