@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Moon, Sun } from "lucide-react";
 import { SECTIONS } from "./content";
 import { useTheme } from "./useTheme";
@@ -9,8 +9,6 @@ export function Nav() {
   const [solid, setSolid] = useState(false);
   const { dark, toggle } = useTheme();
   const [open, setOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -105,11 +103,6 @@ export function Nav() {
             </button>
           </div>
         </nav>
-        <motion.div
-          aria-hidden
-          style={{ scaleX: progress }}
-          className="h-px w-full origin-left bg-accent"
-        />
       </motion.header>
 
       <AnimatePresence>

@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useInView, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function useIsDesktop() {
@@ -155,27 +155,13 @@ export function Magnetic({
 /** Vertical parallax driven by element position in viewport. */
 export function Parallax({
   children,
-  amount = 40,
   className,
 }: {
   children: ReactNode;
   amount?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
-  const desktop = useIsDesktop();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [amount, -amount]);
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      style={reduce || !desktop ? {} : { y, willChange: "transform" }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 /** A hairline that draws itself in when scrolled into view. */
