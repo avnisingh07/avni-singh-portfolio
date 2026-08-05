@@ -8,9 +8,9 @@ export function SmoothScroll() {
 
     import("lenis").then(({ default: Lenis }) => {
       const lenis = new Lenis({
-        duration: 1.15,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        lerp: 0.16,
         smoothWheel: true,
+        syncTouch: false,
         anchors: { offset: -72 },
       });
       const loop = (time: number) => {

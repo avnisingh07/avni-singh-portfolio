@@ -1,4 +1,4 @@
-import { motion, useInView, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useInView, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function useIsDesktop() {
