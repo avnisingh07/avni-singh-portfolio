@@ -203,7 +203,7 @@
 
 @media (max-width: 767px) {
   .marquee-track {
-    animation-duration: 42s !important;
+    animation: none !important;
   }
 }
 

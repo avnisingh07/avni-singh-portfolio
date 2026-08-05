@@ -46,7 +46,7 @@ export function Nav() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
-          solid || open ? "border-b border-border bg-background/85 backdrop-blur-md" : ""
+          solid || open ? "border-b border-border bg-background" : ""
         }`}
       >
         <nav className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 md:py-5">
