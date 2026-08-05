@@ -125,24 +125,27 @@ export function Magnetic({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
   const desktop = useIsDesktop();
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const x = useSpring(mx, { stiffness: 220, damping: 22, mass: 0.25 });
+  const y = useSpring(my, { stiffness: 220, damping: 22, mass: 0.25 });
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      animate={{ x: pos.x, y: pos.y }}
-      transition={{ type: "spring", stiffness: 180, damping: 15, mass: 0.4 }}
+      style={{ x, y }}
       onPointerMove={(e) => {
-        if (!desktop || !ref.current) return;
+        if (!desktop || e.pointerType !== "mouse" || !ref.current) return;
         const r = ref.current.getBoundingClientRect();
-        setPos({
-          x: (e.clientX - (r.left + r.width / 2)) * strength,
-          y: (e.clientY - (r.top + r.height / 2)) * strength,
-        });
+        mx.set((e.clientX - (r.left + r.width / 2)) * strength);
+        my.set((e.clientY - (r.top + r.height / 2)) * strength);
       }}
-      onPointerLeave={() => setPos({ x: 0, y: 0 })}
+      onPointerLeave={() => {
+        mx.set(0);
+        my.set(0);
+      }}
     >
       {children}
     </motion.div>
@@ -161,11 +164,15 @@ export function Parallax({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+  const desktop = useIsDesktop();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const raw = useTransform(scrollYProgress, [0, 1], [amount, -amount]);
-  const y = useSpring(raw, { stiffness: 120, damping: 24, mass: 0.4 });
+  const y = useTransform(scrollYProgress, [0, 1], [amount, -amount]);
   return (
-    <motion.div ref={ref} className={className} style={reduce ? {} : { y }}>
+    <motion.div
+      ref={ref}
+      className={className}
+      style={reduce || !desktop ? {} : { y, willChange: "transform" }}
+    >
       {children}
     </motion.div>
   );
