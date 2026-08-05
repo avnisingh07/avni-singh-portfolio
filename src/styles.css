@@ -87,11 +87,12 @@
   html {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   @media (prefers-reduced-motion: reduce) {
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
   }
 
@@ -198,6 +199,12 @@
 
 .marquee:hover .marquee-track {
   animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .marquee-track {
+    animation: none !important;
+  }
 }
 
 .marquee::before,

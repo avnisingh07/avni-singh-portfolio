@@ -1,5 +1,4 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import avniPhoto from "@/assets/avni.jpeg.asset.json";
 import { LINKS } from "./content";
@@ -15,17 +14,9 @@ const TICKER = [
 ];
 
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
-  const titleY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"]);
-  const fade = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
-
   return (
     <section
       id="top"
-      ref={ref}
       className="grain relative mx-auto max-w-[1400px] overflow-hidden px-5 pb-12 pt-28 sm:px-8 md:pb-24 md:pt-40"
     >
       {/* ambient accent wash */}
@@ -34,7 +25,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
-        className="pointer-events-none absolute -right-40 -top-24 h-[520px] w-[520px] rounded-full blur-[120px]"
+        className="pointer-events-none absolute -right-40 -top-24 h-[520px] w-[520px] rounded-full opacity-40"
         style={{
           background:
             "radial-gradient(circle, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%)",
@@ -42,7 +33,7 @@ export function Hero() {
       />
 
       <div className="relative grid items-start gap-10 md:grid-cols-12 md:gap-6">
-        <motion.div className="md:col-span-7" style={reduce ? {} : { y: titleY }}>
+        <motion.div className="md:col-span-7">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -127,10 +118,7 @@ export function Hero() {
           className="group relative md:col-span-5 md:-mt-10"
         >
           <div className="pointer-events-none absolute -inset-3 -z-10 border border-rule opacity-60 transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-2" />
-          <motion.div
-            className="relative overflow-hidden bg-secondary"
-            style={reduce ? {} : { y: imgY }}
-          >
+          <motion.div className="relative overflow-hidden bg-secondary">
             {/* mask wipe on load */}
             <motion.span
               aria-hidden
@@ -178,10 +166,7 @@ export function Hero() {
         </div>
       </motion.div>
 
-      <motion.div
-        style={reduce ? {} : { opacity: fade }}
-        className="mt-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
-      >
+      <motion.div className="mt-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
         <motion.span
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
