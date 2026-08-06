@@ -1,12 +1,6 @@
 <h1 align="center">Avni Singh — Portfolio</h1>
 <h3 align="center">Applied AI Engineer — Full Stack, LLMs & Backend Systems</h3>
 
-<p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Live-Site-black?style=flat-square" /></a>
-  <a href="public/Avni-Singh-Resume.pdf"><img src="https://img.shields.io/badge/Resume-PDF-orange?style=flat-square" /></a>
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" />
-</p>
-
 ---
 
 ## Table of Contents
