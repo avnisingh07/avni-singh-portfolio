@@ -25,7 +25,7 @@
 
 ## Live Demo
 
-🔗 **[View the live site →](your-deployed-url)**
+🔗 **[View the live site →](https://avni-singh-portfolio.vercel.app)**
 📄 **[Download Resume (PDF)](public/Avni-Singh-Resume.pdf)**
 
 ---
