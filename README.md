@@ -1,5 +1,5 @@
 <h1 align="center">Avni Singh — Portfolio</h1>
-<h3 align="center">Applied AI Engineer — Robotics, LLMs & Backend Systems</h3>
+<h3 align="center">Applied AI Engineer — Full Stack, LLMs & Backend Systems</h3>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Live-Site-black?style=flat-square" /></a>
